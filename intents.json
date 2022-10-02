@@ -1,0 +1,45 @@
+{"intents": [
+    {
+    "tag" : "greetings",
+    "patterns": ["Cześć","Czesc","Dzień Dobry","Dzien Dobry", "Dobry wieczór", "Dobry Wieczor", ""],
+    "responses": ["Cześć", "Siemka", "Co mogę zrobić dla ciebie?"]
+    },
+    
+    {
+    "tag" : "goodbye",
+    "patterns": ["cya","Do zobaczenia","Cześć","Idę", "Paa!", "Siema", "Elo"],
+    "responses": ["Papa"]
+    },
+
+    {
+    "tag":"feeling",
+    "patterns": ["Jak się masz?", "Co u ciebie?", "Fajnie się bawisz?"],
+    "responses": ["Jestem tylko robotem, ale dziękuje, że pytasz"]
+    },
+
+    {
+        "tag":"feeling",
+        "patterns": ["Jak się masz?", "Co u ciebie?", "Fajnie się bawisz?"],
+        "responses": ["Jestem tylko robotem, ale dziękuje, że pytasz"]
+    },
+
+    {
+        "tag":"jokes",
+        "patterns":[""],
+        "responses":[""]
+    },
+
+    {
+        "tag":"warsaw-informations",
+        "patterns":["Co można zwiedzić w warszawie?", "Znasz ciekawe miejsce?", "Jakie jest ciekawe miejsce"],
+        "responses":["Polecam poznać się z Łazienkami Królewskimi"]
+    },
+
+    {
+        "tag":"poor",
+        "patterns":["Pomóż mi", "Nie mam pieniędzy", "Jestem biedny"],
+        "responses":["W czym mogę ci pomóc?"]
+    }
+
+
+]}
