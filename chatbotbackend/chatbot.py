@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 class RobotWarsaw():
     def __init__(self):
         self.lemmatizer = WordNetLemmatizer()
-        self.intents = json.loads(open('../databases/chatbot_data.json').read())
+        self.intents = json.loads(open('../databases/chatbot_data_pl.json').read())
 
         self.words = pickle.load(open('../words.pkl', 'rb'))
         self.classes = pickle.load(open('../classes.pkl','rb'))
