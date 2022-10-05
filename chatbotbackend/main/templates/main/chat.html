@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" type="text/css" href=" {% static 'style.css' %} ">
+</head>
+<body>
+    <section>
+        <div id = "1" class="message your-message"></div>
+        <div id = "2" class="message chatbot-message"></div>
+        <ul id="chat-menu">
+            
+        </ul>
+        <input id="text" type="text" class="message write" placeholder="Text me..">
+        <input id="submit" type="submit" class="message" value="Send">
+        
+
+    </section>
+    <script src="{% static 'chat.js' %}"></script>
+</body>
+</html>

@@ -24,12 +24,6 @@
     },
 
     {
-        "tag":"jokes",
-        "patterns":[""],
-        "responses":[""]
-    },
-
-    {
         "tag":"warsaw-informations",
         "patterns":["Co można zwiedzić w warszawie?", "Znasz ciekawe miejsce?", "Jakie jest ciekawe miejsce"],
         "responses":["Polecam poznać się z Łazienkami Królewskimi"]
@@ -37,7 +31,7 @@
 
     {
         "tag":"poor",
-        "patterns":["Pomóż mi", "Nie mam pieniędzy", "Jestem biedny"],
+        "patterns":["Pomóż mi", "Nie mam pieniędzy", "Pomocy"],
         "responses":["W czym mogę ci pomóc?"]
     }
 

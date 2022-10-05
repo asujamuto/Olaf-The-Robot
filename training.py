@@ -13,7 +13,7 @@ from tensorflow.keras.optimizers import SGD
 lemmatizer = WordNetLemmatizer()
 
 #opening document
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('databases/chatbot_data.json').read())
 
 words = []
 classes = []
