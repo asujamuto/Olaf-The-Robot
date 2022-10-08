@@ -2,11 +2,13 @@
 
 
 
-
-let message = document.getElementById("text")
+const message = document.getElementById("text");
 const menu = document.querySelector('#chat-menu');
-let button = document.querySelector("#submit");
+const button = document.querySelector("#submit");
+
 let count = 0
+
+
 
 
 function createMenuItem(name) 
@@ -15,11 +17,11 @@ function createMenuItem(name)
     li.textContent = name;
     if(count % 2 == 0) 
     { 
-        li.className = "chatbot-message" 
+        li.className = "user-message message" 
     }
     else if(count % 2 != 0) 
     { 
-        li.className = "your-message"
+        li.className = "message"
     }
 
     count++;
@@ -28,19 +30,23 @@ function createMenuItem(name)
 }
 
 
+let tab = Array()
 
 button.addEventListener("click", () => {
 
     let val = document.getElementById('text').value;
-    console.log(val);
 
-    //node.js zmienna val jako data sent
-    let new_val = () =>
-    {
-        return val;
-    }
-  
-    menu.appendChild(createMenuItem(val))
+    window.localStorage.setItem("messages", val)
+
+    /*
+    tab = JSON.parse(window.localStorage.getItem("messages"));
+
+    tab.push(val)
+
+    window.localStorage.setItem("messages", JSON.stringify(tab));
+    
+    //localStorage.clear();
+    */
 });
 
 

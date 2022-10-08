@@ -3,35 +3,46 @@ import pandas as pd
 import json
 
 
-df = pd.read_csv('./Small_talk_Intent.csv')
-df = pd.DataFrame(df)
+
 
 
 
 #that function saves files to dictionary, than saves it to intents, and lastly it saves it to json
-def save_to_json(tags, patterns):
+def save_to_json(tags, patterns, responses, path, type_of_dict):
 
+        
+    
     intents = []
     for i_tag in range(len(tags)):
         dictionary = {
-            "tag": tags[i_tag],
-            "patterns":[i for i in patterns[i_tag]],
-            "responses":[]
-        }
+                "tag": tags[i_tag],
+                "patterns":[i for i in patterns[i_tag]],
+                "responses":[]
+                }   
+        
+        dictionary_delete_double = {
+                "tag": tags[i_tag],
+                "patterns":[i for i in patterns[i_tag]],
+                "responses":[j for j in responses[i_tag]]
+            }
+        if type_of_dict == 0:
+            dictionary = dictionary 
+
+        elif type_of_dict == 1:
+            dictionary = dictionary_delete_double
+        
+        
         intents.append(dictionary)
-    
+        
     # Serializing json
     final_data = {
         "intents": intents
     }
-    json_object = json.dumps(final_data, indent=4)
-    with open("chatbot_data.json", "w") as outfile:
-        outfile.write(json_object)
-
-
-#data.itertuples()[1] = utters
-#data.itertuples()[2] = intent
-#module of converting data to chatbot 
+    
+    outfile = open(path, "w")
+    json_object = json.dump(final_data, outfile, indent=4)
+    
+    outfile.close()
 
 def find_every_pattern(data):
     tags = []
@@ -58,6 +69,9 @@ def find_every_pattern(data):
 
 
 if  __name__ == "__main__":
+    df = pd.read_csv('./Small_talk_Intent.csv')
+    df = pd.DataFrame(df)
+    path = "databases/clean.json"
     tags, patterns = find_every_pattern(df)
-    save_to_json(tags, patterns)
+    save_to_json(tags, patterns, responses, path, type_of_dict)
 
