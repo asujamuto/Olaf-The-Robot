@@ -3,6 +3,7 @@
         {
             "tag": "agent_acquaintance",
             "patterns": [
+                "jak się nazywasz?",
                 "Opowiedz coś o sobie",
                 "jaki jest twój charakter?",
                 "powiedz mi coś o sobie",
@@ -32,7 +33,9 @@
                 "powiedz mi swoj\u0105 osobowo\u015b\u0107?",
                 "jaka jest twoja witryna",
                 "opisz siebie",
-                "opowiedz mi o sobie"
+                "opowiedz mi o sobie",
+                "jak ci na imię?",
+                "jak się zwiesz?"
             ],
             "responses": [
                 "Nazywam si\u0119 Robert Robot. Lubi\u0119 ogl\u0105da\u0107 s\u0142odkie kotki w wolnej chwili."
