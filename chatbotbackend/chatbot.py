@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 class RobotWarsaw():
     def __init__(self):
         self.lemmatizer = WordNetLemmatizer()
-        self.intents = json.loads(open('../databases/chatbot_data_pl.json').read())
+        self.intents = json.loads(open('../databases/cleaned_database.json').read())
 
         self.words = pickle.load(open('../words.pkl', 'rb'))
         self.classes = pickle.load(open('../classes.pkl','rb'))
@@ -56,11 +56,11 @@ class RobotWarsaw():
             if i['tag'] == tag:
                 result = random.choice(i['responses'])
                 break
-        return result
+        return result, tag
 
     def answer(self, message):
         ints = self.predict_class(message)
-        res = self.get_response(ints,self.intents)
-        return res
+        res, tag = self.get_response(ints,self.intents)
+        return res, tag
 
 

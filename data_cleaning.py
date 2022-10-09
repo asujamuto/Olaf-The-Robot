@@ -3,14 +3,8 @@ import pandas as pd
 import json
 
 
-
-
-
-
 #that function saves files to dictionary, than saves it to intents, and lastly it saves it to json
 def save_to_json(tags, patterns, responses, path, type_of_dict):
-
-        
     
     intents = []
     for i_tag in range(len(tags)):

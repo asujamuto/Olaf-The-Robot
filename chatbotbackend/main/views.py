@@ -4,11 +4,20 @@ from chatbot import RobotWarsaw
 
 from main.forms import MessageForm
 
+import sqlite3
 
 def talk(message):
     robot1 = RobotWarsaw()
-    answer1 = robot1.answer(message)
-    return answer1
+    answer, tag = robot1.answer(message)
+
+    db = sqlite3.connect("/home/pete/Coding/Python/Artificial_Inteligence/chatbot/databases/sqlite3/message_data.db")
+    cursor = db.cursor()
+    print(db)
+    cursor.execute(" INSERT INTO conversation_data(user_message,tag,bot_answer) VALUES (?, ?, ?)", (str(message),str(tag),str(answer)))
+    db.commit()
+    db.close()
+
+    return answer
 
 
 def index(response):
