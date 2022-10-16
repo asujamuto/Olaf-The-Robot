@@ -24,19 +24,18 @@ WORKDIR /var/chatbot-docker/chatbotbackend
 #ADD environment.yml /var/chatbot-docker/environment.yml
 
 RUN conda env create -f /var/chatbot-docker/environment.yml
-ENV PATH /opt/conda/envs/robo-warsaw/bin:$PATH
-RUN /bin/bash -c "source activate robo-warsaw"
+ENV PATH /opt/conda/envs/olaf/bin:$PATH
+RUN /bin/bash -c "source activate olaf"
 
-RUN conda uninstall -n robo-warsaw nltk
-RUN conda install -n robo-warsaw nltk
+#RUN conda uninstall -n robo-warsaw nltk
+#RUN conda install -n robo-warsaw nltk
 
 RUN cd /var/chatbot-docker/chatbotbackend
 
-#RUN conda install -n robo-warsaw nltk
 
 #RUN python manage.py makemigrations
 #RUN python manage.py migrate
 
-RUN ls /opt/conda/envs/robo-warsaw
+RUN ls /opt/conda/envs/olaf
 EXPOSE 8000:8000
 ENTRYPOINT python manage.py runserver localhost:8000 
