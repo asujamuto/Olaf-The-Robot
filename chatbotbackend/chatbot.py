@@ -5,7 +5,12 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
+#nltk.download('stopwords')
+#nltk.download('corpus')
 class RobotWarsaw():
     def __init__(self):
         self.lemmatizer = WordNetLemmatizer()

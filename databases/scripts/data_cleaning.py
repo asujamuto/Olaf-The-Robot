@@ -65,7 +65,7 @@ def find_every_pattern(data):
 if  __name__ == "__main__":
     df = pd.read_csv('./Small_talk_Intent.csv')
     df = pd.DataFrame(df)
-    path = "databases/clean.json"
+    path = "../../databases/clean.json"
     tags, patterns = find_every_pattern(df)
     save_to_json(tags, patterns, responses, path, type_of_dict)
 

@@ -30,7 +30,7 @@ class Data_Cleaner():
 
 
 if  __name__ == "__main__":
-    data_clean = Data_Cleaner("./chatbot_data_pl.json")
+    data_clean = Data_Cleaner("../important-no-more/chatbot_data_pl.json")
     tags, cleaned_patterns, responses = data_clean.delete_double()
 
     path_for_saving_file = "/home/pete/Coding/Python/Artificial_Inteligence/chatbot/databases/cleaned_database.json"
