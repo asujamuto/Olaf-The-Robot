@@ -94,3 +94,10 @@ form button:hover{
     background-color: blue;
     transition: .2s ease;
 }
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+
