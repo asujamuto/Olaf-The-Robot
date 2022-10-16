@@ -11,27 +11,30 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1> Robo Robert </h1>
+            <h1> Olaf </h1>
         </div>
 
         <div class="body">
             
             <ul id="chat-menu">
-                <li class="message">{{ user_message }}</li>
-                <li class="message user_message">{{ bot_message }}</li>
+                <li class="message">Twoja wiadomość : <br>{{ user_message }}</li>
+                <li class="message user_message">Olaf : <br>{{ bot_message }}</li>
             </ul>
-            
+
+            <br>
+            <br>
+            <a href="email_form">
             <div class="link">
-                <a href="email_form">Wyślij mi wiadomość!</a>
+                <a href="email_form">Jeśli potrzebujesz pomocy, wyślij mi wiadomość, klikając na ten napis</a>
             </div>
+            </a>
             
         </div>
         <div class="footer">
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <!-- <input type="text" id="text"> -->
-                <button id="submit">SEND</button>
+                <button id="submit">Wyślij</button>
             </form>
         </div>
     </div>
