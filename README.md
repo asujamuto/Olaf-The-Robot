@@ -15,19 +15,26 @@ Olaf to chatbot, który ma na celu zgłaszać problemy potrzebujących. Kiedy kt
 
 Wchodząc w terminal możemy go pobrać z Git Huba
 > komenda na stworzenie folderu
-> komenda na pobranie z git-huba
+> git clone https://github.com/asujamuto/Olaf-The-Robot.git -b master
 
-Z terminala wchodzimy do folderu "chatbot"
 
 Windows:
->cd .\chatbot\
+> cd Olaf-The-Robot
 
 Linux:
->cd ./chatbot/
+> cd Olaf-The-Robot
 
+W tym kroku trzeba włączyć docker deamona.
 
+Windows:
+**W tym kroku trzeba włączyć windowsowego docker deamona.**
+
+Linux:
+sudo systemctl start docker 
+
+Linux:
 Zbudujmy naszą aplikację:
-> docker built -t olaf-chatbot .
+> docker build -t olaf-chatbot .
 
 Otwieramy aplikację:
 > docker run -it --net=host olaf-chatbot
