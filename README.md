@@ -1,6 +1,7 @@
 # Olaf The Robot 
 ### Budka, która może uratować życie i nie tylko
 
+![Olaf](https://user-images.githubusercontent.com/67243090/196067415-31c802a2-d136-46f4-ade3-854adbc9ab95.png)
 
 Olaf to oprogramowanie, które w przyszłości mogło by pojawić się w budce. 
 Założenia projektu to:
