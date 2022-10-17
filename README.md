@@ -15,24 +15,29 @@ Olaf to chatbot, który ma na celu zgłaszać problemy potrzebujących. Kiedy kt
 
 ### Jak zainstalować Olafa?
 
-Wchodząc w terminal możemy go pobrać z Git Huba
-> komenda na stworzenie folderu
+Wchodzimy w terminal
+Tworzymy folder:
+
+> mkdir Olaf-The-Robot
+
+Wchodzimy do folderu:
+
+Windows:
+> cd Olaf-The-Robot
+
+Linux:
+> cd Olaf-The-Robot
+
+Wchodząc w terminal możemy pobrać pliki z Git Huba
 > git clone https://github.com/asujamuto/Olaf-The-Robot.git -b master
 
+Włączamy docker deamona.
 
 Windows:
-> cd Olaf-The-Robot
+*W tym kroku należy włączyć windowsowego docker deamona. Niestety, program głównie jest przystosowany pod system Linux*
 
 Linux:
-> cd Olaf-The-Robot
-
-W tym kroku trzeba włączyć docker deamona.
-
-Windows:
-**W tym kroku trzeba włączyć windowsowego docker deamona.**
-
-Linux:
-sudo systemctl start docker 
+>sudo systemctl start docker 
 
 Linux:
 Zbudujmy naszą aplikację:
@@ -43,7 +48,26 @@ Otwieramy aplikację:
 
 W wyszukiwarce wpisujemy: htttp://localhost:8000
 
-To był ostatni krok. 
+To był ostatni krok.
+
+
+
+### Folder (w tym opis drzewa katalogu)
+
+Program złożony jest z głównych członów:
+- Folder z Django **chatbotbackend**
+- Folder z aplikacją Django **chatbotbackend/main**
+	- **/templates/home.html** - główna strona aplikacji, na której wyświetla się chatbot
+	- **/templates/email_form.html** - strona z formularzem do maila
+	- **/static/** - jest tutaj plik css i js używany do wyświetlanych stron
+
+
+- Plik **databases/cleaned_database.json** - plik, z danymi z których uczy się maszyna
+- Folder **databases/scripts/** - folder, ze skryptami do konwersji danych z databases/csv/Small_talk_Intent.csv na polskie databases/cleaned_database.json
+- Plik **training.py** - plik, w którym maszyna "uczy się"
+- Folder **chatbot_model.model** - folder z zapisaną maszyną z training.py
+- Plik **chatbotbackend/chatbot.py** - plik, w którym odbywa się chat
+
 
 ### Rzeczy, które można usprawnić:
 - system rozmowy - Olaf niestety nie ma jeszcze wielu danych, ani nie był testowany na większej grupie ludzi. Bot zbiera dane z konwersacji, aby w przyszłości na ich podstawie, uczył się nieprzewidywalnie kreatywnych ludzkich sentencji
